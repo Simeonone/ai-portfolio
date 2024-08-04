@@ -126,7 +126,7 @@ const projects = [
       title: 'Natural Language Processing Chatbot',
       description: 'An interactive NLP-powered chatbot that simulates a conversation with Simeon, showcasing his AI expertise through dynamic responses, sentiment analysis, and a user-friendly interface.',
       image: 'https://via.placeholder.com/300x200.png?text=NLP+Chatbot',
-      github: 'https://github.com/Simeonone/NLP-chatbot.git',
+      github: 'https://github.com/Simeonone/NLP-chatbot.git'
       // liveDemo: 'https://your-live-demo-url.com'
     },
     {
