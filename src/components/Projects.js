@@ -28,6 +28,9 @@ const ProjectCard = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
 
   &:hover {
     transform: translateY(-5px);
@@ -42,7 +45,22 @@ const ProjectImage = styled.img`
 
 const ProjectInfo = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `;
+
+const ButtonContainer = styled.div`
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  // border: 1px solid red;
+`;
+
 
 const ProjectTitle = styled.h3`
   color: #00aa00;  // Green to match the theme
@@ -63,7 +81,7 @@ const GitHubButton = styled.a`
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease;
-
+  border: 1px solid green;
   &:hover {
     background-color: #008800;
   }
@@ -73,6 +91,28 @@ const GitHubButton = styled.a`
     cursor: not-allowed;
   }
 `;
+
+const DemoButton = styled.a`
+  display: inline-block;
+  background-color: #0077be; 
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; 
+  border: 1px solid blue;
+  &:hover {
+    background-color: #005fa3;
+  }
+
+  &:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+`;
+
 const projects = [
     {
       id: 1,
@@ -84,15 +124,16 @@ const projects = [
     {
       id: 2,
       title: 'Natural Language Processing Chatbot',
-      description: 'Created an AI-powered chatbot using NLP techniques and the GPT-3 API.',
+      description: 'An interactive NLP-powered chatbot that simulates a conversation with Simeon, showcasing his AI expertise through dynamic responses, sentiment analysis, and a user-friendly interface.',
       image: 'https://via.placeholder.com/300x200.png?text=NLP+Chatbot',
-      github: ''
+      github: 'https://github.com/Simeonone/NLP-chatbot.git',
+      // liveDemo: 'https://your-live-demo-url.com'
     },
     {
       id: 3,
       title: 'Automatic Accident Detection and emergency response system',
       description: 'Implemented an ANN model to detect accidents and activate emergency response in real time. Developed with Edge Impulse and Python to work with an Arduino Nano 33 BLE sense Board.',
-      image: 'https://via.placeholder.com/300x200.png?text=Automatic+Accident+Detection',
+      image: 'https://via.placeholder.com/300x200.png?text=Automatic+Accident+Detector',
       github: 'https://github.com/Simeonone/an-embedded-fall-detection-system-and-automatic-emergency-response'
     },
   ];
@@ -104,21 +145,26 @@ const projects = [
         <ProjectGrid>
           {projects.map((project) => (
             <ProjectCard key={project.id}>
-              <ProjectImage src={project.image} alt={project.title} />
-              <ProjectInfo>
-                <ProjectTitle>{project.title}</ProjectTitle>
-                <ProjectDescription>{project.description}</ProjectDescription>
-                {project.github ? (
-                  <GitHubButton href={project.github} target="_blank" rel="noopener noreferrer">
-                    View on GitHub
-                  </GitHubButton>
-                ) : (
-                  <GitHubButton as="span" disabled>
-                    GitHub Unavailable
-                  </GitHubButton>
-                )}
-              </ProjectInfo>
-            </ProjectCard>
+            <ProjectImage src={project.image} alt={project.title} />
+            <ProjectInfo>
+              <ProjectTitle>{project.title}</ProjectTitle>
+              <ProjectDescription>{project.description}</ProjectDescription>
+              <ButtonContainer>
+  {console.log('GitHub URL:', project.github)}
+  {project.github && (
+    <GitHubButton href={project.github} target="_blank" rel="noopener noreferrer">
+      View on GitHub
+    </GitHubButton>
+  )}
+  {console.log('Live Demo URL:', project.liveDemo)}
+  {project.liveDemo && (
+    <DemoButton href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+      Live Demo
+    </DemoButton>
+  )}
+</ButtonContainer>
+            </ProjectInfo>
+          </ProjectCard>
           ))}
         </ProjectGrid>
       </ProjectsContainer>
