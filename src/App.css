@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+#home, #about, #projects, #contact {
+  min-height: 100vh;
+  padding-top: 1rem;
+}
+
+.content {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
