@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.section`
@@ -15,109 +15,54 @@ const Title = styled.h2`
   margin-bottom: 40px;
 `;
 
-const Form = styled.form`
+const ContactInfo = styled.div`
   max-width: 600px;
   margin: 0 auto;
 `;
 
-const FormGroup = styled.div`
-  margin-bottom: 20px;
+const InfoItem = styled.p`
+  margin-bottom: 15px;
 `;
 
-const Label = styled.label`
-  display: block;
-  margin-bottom: 5px;
+const Label = styled.span`
+  font-weight: bold;
+  margin-right: 10px;
 `;
 
-const Input = styled.input`
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #00aa00;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.8);
-`;
-
-const TextArea = styled.textarea`
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #00aa00;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.8);
-  resize: vertical;
-`;
-
-const Button = styled.button`
-  background-color: #00aa00;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
+const Link = styled.a`
+  color: #008000;
+  text-decoration: none;
   &:hover {
-    background-color: #008800;
+    text-decoration: underline;
   }
 `;
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the form data to a server or API
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   return (
     <ContactContainer>
       <Title>Contact Me</Title>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label htmlFor="name">Name</Label>
-          <Input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="message">Message</Label>
-          <TextArea
-            id="message"
-            name="message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></TextArea>
-        </FormGroup>
-        <Button type="submit">Send Message</Button>
-      </Form>
+      <ContactInfo>
+        <InfoItem>
+          <Label>Primary Phone:</Label>
+          <Link href="tel:+254713336627">+254 713336627</Link>
+        </InfoItem>
+        <InfoItem>
+          <Label>Primary Email:</Label>
+          <Link href="mailto:simeon.kengere@gmail.com">simeon.kengere@gmail.com</Link>
+        </InfoItem>
+        <InfoItem>
+          <Label>Secondary Email:</Label>
+          <Link href="mailto:simeon.kengere@ieee.org">simeon.kengere@ieee.org</Link>
+        </InfoItem>
+        <InfoItem><Label>Location:</Label> Nairobi, Kenya</InfoItem>
+        <InfoItem><Label>Time Zone:</Label> GMT+3 (EAT)</InfoItem>
+        <InfoItem><Label>Preferred Contact Method:</Label> Email</InfoItem>
+        <InfoItem><Label>Available Hours:</Label> 8 AM - 5 PM EAT, Monday-Saturday</InfoItem>
+        <InfoItem>
+          I'm excited to discuss potential opportunities! Please feel free to reach out
+          through any of the contact methods listed above. I look forward to connecting with you.
+        </InfoItem>
+      </ContactInfo>
     </ContactContainer>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
   background-color: rgba(0, 0, 0, 0.8);
@@ -16,9 +17,15 @@ const Link = styled.a`
   color: #00ff00;
   margin: 0 10px;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const Icon = styled.span`
+  margin-right: 5px;
 `;
 
 const OldPortfolioLink = styled(Link)`
@@ -35,8 +42,14 @@ function Footer() {
   return (
     <FooterContainer>
       <Links>
-        <Link href="https://www.linkedin.com/in/simeon-osiemo-6aa62a185/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
-        <Link href="https://github.com/Simeonone" target="_blank" rel="noopener noreferrer">GitHub</Link>
+        <Link href="https://www.linkedin.com/in/simeon-osiemo-6aa62a185/" target="_blank" rel="noopener noreferrer">
+          <Icon><FaLinkedin /></Icon>
+          LinkedIn
+        </Link>
+        <Link href="https://github.com/Simeonone" target="_blank" rel="noopener noreferrer">
+          <Icon><FaGithub /></Icon>
+          GitHub
+        </Link>
       </Links>
       <OldPortfolioLink href="https://simeon-osiemo-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
         See Where It All Began: Visit My Earlier Projects
