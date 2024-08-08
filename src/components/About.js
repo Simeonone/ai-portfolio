@@ -62,7 +62,7 @@ function About() {
             <p>Software Engineer, Ministry of Interior and National Administration (2024 Feb-Present)</p>
             <p>Research Assistant, The University of Nairobi (2023 Feb - 2024 Jan)</p>
             <p>Data Scientist, Fujita Corporation Japan (2022 Oct - 2023 Feb)</p>
-            <p>Systems Integration Engineer (2021 Nov - 2022 Aug)</p>
+            <p>Systems Integration Engineer, AfyaPro 2.0 Connected Care (2021 Nov - 2022 Aug)</p>
             <p>Software Engineer, Ongata Rongai Sub County Hospital (2021 May - 2021 Nov)</p>
           </InfoText>
         </InfoItem>
