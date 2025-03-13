@@ -43,16 +43,8 @@ function Contact() {
       <Title>Contact Me</Title>
       <ContactInfo>
         <InfoItem>
-          <Label>Primary Phone:</Label>
-          <Link href="tel:+254713336627">+254 713336627</Link>
-        </InfoItem>
-        <InfoItem>
           <Label>Primary Email:</Label>
           <Link href="mailto:simeon.kengere@gmail.com">simeon.kengere@gmail.com</Link>
-        </InfoItem>
-        <InfoItem>
-          <Label>Secondary Email:</Label>
-          <Link href="mailto:simeon.kengere@ieee.org">simeon.kengere@ieee.org</Link>
         </InfoItem>
         <InfoItem><Label>Location:</Label> Nairobi, Kenya</InfoItem>
         <InfoItem><Label>Time Zone:</Label> GMT+3 (EAT)</InfoItem>
