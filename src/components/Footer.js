@@ -54,7 +54,7 @@ function Footer() {
       <OldPortfolioLink href="https://simeon-osiemo-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
         See Where It All Began: Visit My Earlier Projects
       </OldPortfolioLink>
-      <Copyright>&copy; 2024 Simeon Osiemo.</Copyright>
+      <Copyright>&copy; 2026 Simeon Osiemo.</Copyright>
     </FooterContainer>
   );
 }
